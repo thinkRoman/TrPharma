@@ -12,7 +12,7 @@ export function DrugCategories() {
           We guarantee the highest quality and efficacy of our products.
         </p>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6'>
-          <div className='flex flex-col items-center text-center space-y-2 p-2 border border-gray-500 hover:bg-gray-50 bg-gray-200'>
+          <div className='flex flex-col items-center text-center space-y-2 p-2 hover:bg-gray-50 bg-gray-200'>
             <PlusIcon className='text-blue-600 h-8 w-8' />
             <h4 className='font-semibold'>ANTIBIOTIC</h4>
             <p className='text-sm'>
@@ -21,7 +21,7 @@ export function DrugCategories() {
               fighting bacterial infections.
             </p>
           </div>
-          <div className='flex flex-col items-center text-center space-y-2 p-2 border border-gray-500 hover:bg-gray-50 bg-gray-200'>
+          <div className='flex flex-col items-center text-center space-y-2 p-2 hover:bg-gray-50 bg-gray-200'>
             <PlusIcon className='text-blue-600 h-8 w-8' />
             <h4 className='font-semibold'>PAIN MANAGEMENT</h4>
             <p className='text-sm'>
@@ -30,7 +30,7 @@ export function DrugCategories() {
               the quality of life of those living with chronic pain.
             </p>
           </div>
-          <div className='flex flex-col items-center text-center space-y-2 p-2 border border-gray-500 hover:bg-gray-50 bg-gray-200'>
+          <div className='flex flex-col items-center text-center space-y-2 p-2 hover:bg-gray-50 bg-gray-200'>
             <PlusIcon className='text-blue-600 h-8 w-8' />
             <h4 className='font-semibold'>VITAMIN D SUPPLEMENT</h4>
             <p className='text-sm'>
