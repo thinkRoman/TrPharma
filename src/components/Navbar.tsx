@@ -1,35 +1,44 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Logo from '~/images/logo.png'
+import Logo from '~/images/logo.png';
 
 export function Navbar() {
   return (
     <div>
-      <div className="flex justify-between items-center top-0 sticky py-1 px-8 bg-[#EBEAE7]">
-        <Link href='/' className="">
+      <div className='flex justify-between items-center top-0 sticky py-1 px-4 md:px-8 bg-[#EBEAE7]'>
+        <Link href='/' className=''>
           <Image
             src={Logo}
-            alt="logo"
+            alt='logo'
             width={200}
             height={100}
-            className="h-16 w-auto object-cover"
+            className='h-12 md:h-16 w-auto object-cover'
           />
         </Link>
-        <div className="flex space-x-4">
-          <Link href='/#home' className="text-gray-600 hover:text-gray-800 hover:underline">
+        <div className='flex space-x-2 md:space-x-4'>
+          <Link
+            href='/#home'
+            className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
+          >
             Home
           </Link>
-          <Link href="/#about" className="text-gray-600 hover:text-gray-800 hover:underline">
+          <Link
+            href='/#about'
+            className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
+          >
             About
           </Link>
-          <Link href="/#wellness" className="text-gray-600 hover:text-gray-800 hover:underline">
+          <Link
+            href='/#wellness'
+            className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
+          >
             Wellness
           </Link>
-          {/* <Link href="#contact" className="text-gray-600 hover:text-gray-800 hover:underline">
-            Contact
-          </Link> */}
-          <Link href='/gallery' className="text-gray-600 hover:text-gray-800 hover:underline">
+          <Link
+            href='/gallery'
+            className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
+          >
             Gallery
           </Link>
         </div>

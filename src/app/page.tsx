@@ -27,8 +27,8 @@ export default async function HomePage() {
       <Hero />
       <DrugCategories />
       <MissionVision />
-      <About />
       <Articles articles={articles} />
+      <About />
     </main>
   );
 }
