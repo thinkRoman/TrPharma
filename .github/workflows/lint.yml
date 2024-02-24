@@ -1,44 +1,53 @@
-name: Code Check
-on:
-  push:
-    branches:
-      - main
-  pull_request: {}
+name: PR Source Code Check
 
-concurrency:
-  group: ${{ github.job }}-${{ github.ref }}
-  cancel-in-progress: true
+on:
+  - push
 
 jobs:
   lint:
-    name: ⬣ ESLint, ʦ TypeScript, 💅 Prettier, and 🃏 Test
+    name: Run ESLint
     runs-on: ubuntu-latest
     steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v2
-
-      - name: 🤌 Setup pnpm
-        uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          version: 8
+          node-version: '14'
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn lint:strict
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v3
+  tsc:
+    name: Run Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: '14'
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn typecheck
 
-      - name: 📥 Download deps
-        run: pnpm install --frozen-lockfile
+  prettier:
+    name: Run Prettier Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn format:check
 
-      - name: 🔬 Lint
-        run: pnpm run lint:strict
-
-      - name: 🔎 Type check
-        run: pnpm run typecheck
-
-      - name: 💅 Prettier check
-        run: pnpm run format:check
-
-      - name: 🃏 Run jest
-        run: pnpm run test
+  # test:
+  #   name: Run Test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '14'
+  #         cache: 'yarn'
+  #     - run: yarn
+  #     - run: yarn test

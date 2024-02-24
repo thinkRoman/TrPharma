@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Article } from '@/constant/types';
+import { Article } from '@/components/articles/type';
 
 const ArticleCard = ({ article }: { article: Article }) => {
   return (

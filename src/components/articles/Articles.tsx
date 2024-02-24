@@ -6,25 +6,8 @@ import * as React from 'react';
 import { useWindowSize } from 'rooks';
 
 import ArticleCard from '@/components/articles/ArticleCard';
+import { Article } from '@/components/articles/type';
 import { Container } from '@/components/Container';
-
-interface Article {
-  id: string;
-  url: string;
-  title: string;
-  featuredImage: {
-    url: string;
-    width: number;
-    height: number;
-  };
-  description: string;
-  publishedAt: Date;
-  readingTime: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-}
 
 export function Articles({ articles }: { articles: Article[] }) {
   const width = useWindowSize().innerWidth;
