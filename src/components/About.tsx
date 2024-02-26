@@ -13,22 +13,30 @@ export function About() {
           Your Health and Wellness Partner
         </p>
         <div className='flex flex-col md:flex-row items-center justify-between gap-8'>
-          <p className='text-gray-600'>
-            At TrPharma, we stand at the unique crossroads of clinical expertise
-            and pharmaceutical innovation. Our leadership team brings together
-            extensive experience from both the world of clinical care and the
-            pharmaceutical industry, a combination that sets us apart in our
-            mission to transform healthcare. With a deep understanding of
-            patient needs gained from years of direct clinical experience, and a
-            sharp focus on the cutting-edge advancements in pharmaceuticals, we
-            are uniquely positioned to bridge the gap between traditional
-            healthcare and modern medical solutions. Our dual foundation
-            empowers us to develop, produce, and provide healthcare products and
-            services that are not only effective but truly tailored to the
-            communities we serve. At TrPharma, we are dedicated to advancing
-            health and wellness by integrating the best of clinical insights
-            with the latest in pharmaceutical achievements.
-          </p>
+          <div className='flex flex-col space-y-4 text-gray-600 text-justify'>
+            <p className='text-gray-600'>
+              At TrPharma, we stand at the unique crossroads of clinical
+              expertise and pharmaceutical innovation. Our leadership team
+              brings together extensive experience from both the world of
+              clinical care and the pharmaceutical industry, a combination that
+              sets us apart in our mission to transform healthcare.
+            </p>
+            <p className='text-gray-600'>
+              With a deep understanding of patient needs gained from years of
+              direct clinical experience, and a sharp focus on the cutting-edge
+              advancements in pharmaceuticals, we are uniquely positioned to
+              bridge the gap between traditional healthcare and modern medical
+              solutions.
+            </p>
+            <p className='text-gray-600'>
+              Our dual foundation empowers us to develop, produce, and provide
+              healthcare products and services that are not only effective but
+              truly tailored to the communities we serve. At TrPharma, we are
+              dedicated to advancing health and wellness by integrating the best
+              of clinical insights with the latest in pharmaceutical
+              achievements.
+            </p>
+          </div>
           <Image
             src={AboutImg}
             alt='About Us'

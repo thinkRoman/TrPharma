@@ -6,7 +6,7 @@ import Logo from '~/images/logo.png';
 export function Navbar() {
   return (
     <div>
-      <div className='flex justify-between items-center top-0 sticky py-1 px-4 md:px-8 bg-[#EBEAE7]'>
+      <div className='flex justify-between items-center top-0 sticky py-1 px-4 md:px-8 lg:px-10 bg-[#EBEAE7]'>
         <Link href='/' className=''>
           <Image
             src={Logo}

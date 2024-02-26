@@ -20,17 +20,17 @@ export function Hero() {
           height={1939}
         />
       </div>
-      <div className='absolute inset-0 bg-black/60 mix-blend-multiply' />
+      <div className='absolute inset-0 bg-black/20 mix-blend-multiply' />
 
       <div className='absolute w-full bottom-4 mx-auto'>
-        <div className='relative flex h-full flex-col justify-between items-start sm:items-center px-4 py-6 sm:px-6 sm:py-10 lg:px-16 lg:py-16'>
+        <div className='relative flex h-full flex-col justify-between items-center px-4 py-4 sm:px-6 sm:py-6 lg:px-16 lg:py-8'>
           <h1 className='my-0 font-canela space-y-2 text-xl font-light tracking-wide text-[rgb(243,244,244)] sm:text-3xl md:space-y-3 lg:text-5xl'>
             <span className='block'>Your health and wellness partner</span>
           </h1>
           <Link
             href='mailto:admin@thinkroman.com'
             target='_blank'
-            className='mt-4 inline-flex justify-center font-primary tracking-normal bg-white text-black py-1 px-3 text-base md:text-lg font-medium rounded-sm hover:bg-gray-100'
+            className='mt-4 sm:mt-8 inline-flex justify-center font-primary tracking-normal bg-white text-black py-1 px-3 text-sm sm:text-base md:text-lg font-medium rounded-none hover:bg-gray-100'
           >
             Contact Us
           </Link>
