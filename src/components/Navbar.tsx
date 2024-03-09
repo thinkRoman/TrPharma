@@ -24,6 +24,12 @@ export function Navbar() {
             Home
           </Link>
           <Link
+            href='/products'
+            className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
+          >
+            Products
+          </Link>
+          <Link
             href='/#about'
             className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
           >
@@ -34,12 +40,6 @@ export function Navbar() {
             className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
           >
             Wellness
-          </Link>
-          <Link
-            href='/gallery'
-            className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
-          >
-            Gallery
           </Link>
         </div>
       </div>
