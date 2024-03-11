@@ -5,18 +5,18 @@ import { Container } from '@/components/Container';
 
 const cards = [
   {
-    img: '/images/med-1.png',
+    img: '/images/med-1.jpg',
     heading: 'KashMOX 625: The Double Defense.',
     desc: 'Amoxicillin meets Clavulanic Acid to tackle infections head-on. Quick. Effective. Resilient. Get back to full strength faster.',
     tagline: 'KashMOX 625 — Guard Your Health.',
   },
   {
-    img: '/images/med-2.jpeg',
+    img: '/images/med-2.jpg',
     heading: "Live life to the fullest—don't let pain hold you back.",
     desc: 'With One87 Plus embrace an active lifestyle free from discomfort, - talk to your healthcare provider and step into a vibrant, pain-free life today.',
   },
   {
-    img: '/images/med-3.png',
+    img: '/images/med-3.jpg',
     heading: 'Sohar-D 60k: Essential Wellness, Effortlessly Delivered.',
     desc: 'Packed with 60,000 IU of Vitamin D3, Sohar-D 60k sachets provide the boost you need for bone health and immune support in a single, convenient dose. Trust in Sohar-D to fortify your vitality with ease.',
     tagline: 'Your health, our science: Sohar-D 60k.',
@@ -31,7 +31,7 @@ export function Products() {
           <Link
             href='#'
             key={index}
-            className='group z-1 cursor-pointer max-w-sm bg-gray-200 transition-all hover:bg-gray-100'
+            className='group z-1 cursor-pointer max-w-sm bg-white transition-all hover:bg-gray-100'
           >
             {/* <div className='flex-1 space-y-6 px-6 pb-6 pt-8'>
             <h3 className='animated-underline group-hover:animated-underline-start text-center font-heading text-3xl font-normal '>
