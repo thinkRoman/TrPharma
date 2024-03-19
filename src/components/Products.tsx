@@ -5,18 +5,21 @@ import { Container } from '@/components/Container';
 
 const cards = [
   {
-    img: '/images/med-1.jpg',
+    // img: '/images/med-1.jpg',
+    img: '/images/medicine-1.jpeg',
     heading: 'KashMOX 625: The Double Defense.',
     desc: 'Amoxicillin meets Clavulanic Acid to tackle infections head-on. Quick. Effective. Resilient. Get back to full strength faster.',
     tagline: 'KashMOX 625 — Guard Your Health.',
   },
   {
-    img: '/images/med-2.jpg',
+    // img: '/images/med-2.jpg',
+    img: '/images/medicine-2.jpeg',
     heading: "Live life to the fullest—don't let pain hold you back.",
     desc: 'With One87 Plus embrace an active lifestyle free from discomfort, - talk to your healthcare provider and step into a vibrant, pain-free life today.',
   },
   {
-    img: '/images/med-3.jpg',
+    // img: '/images/med-3.jpg',
+    img: '/images/medicine-3.jpeg',
     heading: 'Sohar-D 60k: Essential Wellness, Effortlessly Delivered.',
     desc: 'Packed with 60,000 IU of Vitamin D3, Sohar-D 60k sachets provide the boost you need for bone health and immune support in a single, convenient dose. Trust in Sohar-D to fortify your vitality with ease.',
     tagline: 'Your health, our science: Sohar-D 60k.',
@@ -39,14 +42,14 @@ export function Products() {
             </h3>
           </div> */}
 
-            <div className='aspect-video overflow-hidden'>
+            <div className='overflow-hidden flex justify-center bg-white group-hover:bg-white'>
               <Image
                 src={card.img}
                 alt='Medicine Image'
                 width={2669}
                 height={1782}
                 loading='lazy'
-                className='transition-transform group-hover:scale-105'
+                className='transition-transform group-hover:scale-105 h-60 w-auto'
               />
             </div>
 
