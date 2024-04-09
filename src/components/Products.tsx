@@ -60,22 +60,22 @@ export function Products() {
             <Link
               href='#'
               className={cn(
-                'group z-1 hidden h-96 md:flex justify-between items-center cursor-pointer w-full bg-white transition-all hover:bg-gray-100',
+                'group z-1 hidden h-[450px] md:flex justify-between items-center cursor-pointer w-full bg-white transition-all hover:bg-gray-100',
                 index & 1 && 'flex-row-reverse'
               )}
             >
-              <div className='overflow-hidden w-full h-full flex justify-center items-center bg-white group-hover:bg-white'>
+              <div className='overflow-hidden w-2/3 h-full flex justify-center items-center bg-white group-hover:bg-white'>
                 <Image
                   src={card.img}
                   alt='Medicine Image'
                   width={2669}
                   height={1782}
                   loading='lazy'
-                  className='transition-transform group-hover:scale-105 object-center h-96 w-auto'
+                  className='transition-transform group-hover:scale-105 object-center h-full w-auto'
                 />
               </div>
 
-              <div className='flex items-end px-8 w-full'>
+              <div className='flex items-end px-8 w-1/3'>
                 <div className='flex flex-col gap-4'>
                   <span className='text-lg text-center font-medium'>
                     {card.heading}
