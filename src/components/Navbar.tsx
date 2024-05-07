@@ -36,10 +36,11 @@ export function Navbar() {
             About
           </Link>
           <Link
-            href='/#wellness'
+            href='https://sunshine.thinkroman.com/'
+            target='_blank'
             className='text-gray-600 hover:text-gray-800 hover:underline text-xs md:text-base'
           >
-            Wellness
+            Sunshine
           </Link>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { Articles } from '@/components/articles/Articles';
 import { DrugCategories } from '@/components/DrugCategories';
 import { Hero } from '@/components/Hero';
 import { MissionVision } from '@/components/MissionVision';
+import { Sunshine } from '@/components/Sunshine';
 
 export const revalidate = 86400; // 24 hours
 
@@ -28,6 +29,7 @@ export default async function HomePage() {
       <DrugCategories />
       <MissionVision />
       <Articles articles={articles} />
+      <Sunshine />
       <About />
     </main>
   );
