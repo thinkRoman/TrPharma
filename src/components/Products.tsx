@@ -23,6 +23,24 @@ const cards = [
     desc: 'Packed with 60,000 IU of Vitamin D3, Sohar-D 60k sachets provide the boost you need for bone health and immune support in a single, convenient dose. Trust in Sohar-D to fortify your vitality with ease.',
     tagline: 'Your health, our science: Sohar-D 60k.',
   },
+  {
+    img: '/images/medicine-4.png',
+    heading: 'ComforTide 425',
+    desc: 'Provides targeted relief from acute and chronic pain. Acts as a non-opioid painkiller with a unique mechanism to soothe discomfort. Offers reliable and safe relief from pain and fever. Enhances pain management when combined with Flupirtine.',
+    tagline: 'Effective relief meets enhanced safety in one powerful formula.',
+  },
+  {
+    img: '/images/medicine-5.png',
+    heading: 'AcidBlock 40',
+    desc: 'Targets and suppresses excess stomach acid production. Rapidly absorbs for quick onset of action. Designed for sustained relief from gastric discomfort.',
+    tagline: 'Reliable relief, comprehensive protection.',
+  },
+  {
+    img: '/images/medicine-6.png',
+    heading: 'Reliefon Forte',
+    desc: 'Targets and swiftly reduces pain and inflammation. Acts rapidly to provide relief and improve mobility. Acts as a muscle relaxant, effectively reducing spasms and discomfort. Enhances the therapeutic effects by easing muscle tension.',
+    tagline: 'Dual-action formula for lasting relief and muscle relaxation.',
+  },
 ];
 
 export function Products() {
