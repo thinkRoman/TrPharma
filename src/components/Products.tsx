@@ -41,6 +41,12 @@ const cards = [
     desc: 'Targets and swiftly reduces pain and inflammation. Acts rapidly to provide relief and improve mobility. Acts as a muscle relaxant, effectively reducing spasms and discomfort. Enhances the therapeutic effects by easing muscle tension.',
     tagline: 'Dual-action formula for lasting relief and muscle relaxation.',
   },
+  {
+    img: '/images/medicine-7.jpg',
+    heading: 'Zoovistat 20',
+    desc: 'Effectively lowers bad cholesterol (LDL) and triglycerides in the blood. Increases good cholesterol (HDL), supporting cardiovascular health.',
+    tagline: 'Powerful Cholesterol Control for a healthier tomorrow.',
+  },
 ];
 
 export function Products() {
