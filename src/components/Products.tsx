@@ -42,7 +42,7 @@ const cards = [
     tagline: 'Dual-action formula for lasting relief and muscle relaxation.',
   },
   {
-    img: '/images/medicine-7.jpg',
+    img: '/images/medicine-7.png',
     heading: 'Zoovistat 20',
     desc: 'Effectively lowers bad cholesterol (LDL) and triglycerides in the blood. Increases good cholesterol (HDL), supporting cardiovascular health.',
     tagline: 'Powerful Cholesterol Control for a healthier tomorrow.',
