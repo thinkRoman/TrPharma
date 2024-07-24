@@ -36,7 +36,7 @@ const cards = [
     tagline: 'Reliable relief, comprehensive protection.',
   },
   {
-    img: '/images/medicine-6.png',
+    img: '/images/medicine-6.jpg',
     heading: 'Reliefon Forte',
     desc: 'Targets and swiftly reduces pain and inflammation. Acts rapidly to provide relief and improve mobility. Acts as a muscle relaxant, effectively reducing spasms and discomfort. Enhances the therapeutic effects by easing muscle tension.',
     tagline: 'Dual-action formula for lasting relief and muscle relaxation.',
