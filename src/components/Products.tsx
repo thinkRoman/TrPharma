@@ -54,6 +54,13 @@ const cards = [
     desc: 'Effectively lowers bad cholesterol (LDL) and triglycerides in the blood. Increases good cholesterol (HDL), supporting cardiovascular health.',
     tagline: 'Powerful Cholesterol Control for a healthier tomorrow.',
   },
+  {
+    id: '880-plus',
+    img: '/images/medicine-8.jpg',
+    heading: '880 PLUS',
+    desc: 'A comprehensive multivitamin supplement that provides essential vitamins and minerals for overall health and vitality. Supports energy metabolism, immune function, and overall well-being.',
+    tagline: 'Targeted Multivitamin Supplementation for Complete Wellness.',
+  },
 ];
 
 export function Products() {
