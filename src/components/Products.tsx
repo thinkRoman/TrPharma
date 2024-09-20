@@ -61,6 +61,14 @@ const cards = [
     desc: 'A comprehensive multivitamin supplement that provides essential vitamins and minerals for overall health and vitality. Supports energy metabolism, immune function, and overall well-being.',
     tagline: 'Targeted Multivitamin Supplementation for Complete Wellness.',
   },
+  {
+    id: '280-plus',
+    img: '/images/medicine-9.png',
+    heading: '280 PLUS',
+    desc: 'Iron, Folic Acid, and Zinc work together to boost energy, immunity, and healthy development during pregnancy. They support neural growth, maternal health, and healing, ensuring strong foundations for both mother and baby.',
+    tagline:
+      'Essential supplement for 280 days of healthy pregnancy and motherhood.',
+  },
 ];
 
 export function Products() {
