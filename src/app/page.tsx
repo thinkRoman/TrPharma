@@ -10,7 +10,7 @@ import { Sunshine } from '@/components/Sunshine';
 export const revalidate = 86400; // 24 hours
 
 async function getArticles() {
-  const data = await fetch('https://orzuv.life/api/orzuv/articles', {
+  const data = await fetch('https://orzuv.thinkroman.com/api/orzuv/articles', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
