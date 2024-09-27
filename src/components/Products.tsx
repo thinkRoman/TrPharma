@@ -56,7 +56,7 @@ const cards = [
   },
   {
     id: '880-plus',
-    img: '/images/medicine-8.jpg',
+    img: '/images/medicine-8.png',
     heading: '880 PLUS',
     desc: 'A comprehensive multivitamin supplement that provides essential vitamins and minerals for overall health and vitality. Supports energy metabolism, immune function, and overall well-being.',
     tagline: 'Targeted Multivitamin Supplementation for Complete Wellness.',
