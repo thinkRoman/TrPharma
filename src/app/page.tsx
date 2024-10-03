@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { About } from '@/components/About';
 import { Articles } from '@/components/articles/Articles';
+import { CEO } from '@/components/CEO';
 import { DrugCategories } from '@/components/DrugCategories';
 import { Hero } from '@/components/Hero';
 import { MissionVision } from '@/components/MissionVision';
@@ -31,6 +32,7 @@ export default async function HomePage() {
       <Articles articles={articles} />
       <Sunshine />
       <About />
+      <CEO />
     </main>
   );
 }

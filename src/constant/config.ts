@@ -1,7 +1,7 @@
 export const siteConfig = {
-  title: "TrPharma",
+  title: 'TrPharma',
   description:
-    "TrPharma combines doctor-led insights in antibiotics, pain management, and vitamin deficiency with innovative healthcare solutions. Elevate your health journey with us.",
+    'TrPharma combines doctor-led insights in antibiotics, pain management, and vitamin deficiency with innovative healthcare solutions. Elevate your health journey with us.',
   url: process.env.NEXT_PUBLIC_URL as string,
 
   socialLinks: {

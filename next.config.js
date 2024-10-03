@@ -9,10 +9,7 @@ const nextConfig = {
 
   // Uncoment to add domain whitelist
   images: {
-    domains: [
-      'res.cloudinary.com',
-      'cdn.sanity.io',
-    ],
+    domains: ['res.cloudinary.com', 'cdn.sanity.io'],
   },
 
   webpack(config) {
