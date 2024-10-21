@@ -11,7 +11,7 @@ export function CEO() {
         </h3>
 
         <Image
-          src='/images/ceo.webp'
+          src='/images/ceo.jpeg'
           alt='CEO'
           width={100}
           height={100}
