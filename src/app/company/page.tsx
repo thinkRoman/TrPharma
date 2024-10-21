@@ -1,4 +1,4 @@
-export function CompanyPage() {
+export default function CompanyPage() {
   return (
     <div className='py-12'>
       <iframe
