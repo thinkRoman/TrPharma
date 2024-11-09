@@ -16,6 +16,6 @@ export const getProducts = unstable_cache(
   ['products'],
   {
     tags: ['products'],
-    revalidate: 86400,
+    revalidate: 3600,
   }
 );
