@@ -1,6 +1,7 @@
 'use client';
 
-import { Link } from 'lucide-react';
+import { CheckCircle, Link } from 'lucide-react';
+import { useState } from 'react';
 
 import {
   Tooltip,
@@ -10,21 +11,23 @@ import {
 } from '@/components/ui/tooltip';
 
 export function ProductLink({ id }: { id: string }) {
+  const [linkCopied, setLinkCopied] = useState(false);
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger
           className='top-2 right-2 absolute'
-          onClick={() =>
+          onClick={() => {
             navigator.clipboard.writeText(
               `${window.location.origin}/products#${id}`
-            )
-          }
+            );
+            setLinkCopied(true);
+          }}
         >
-          <Link size={16} />
+          {linkCopied ? <CheckCircle size={16} /> : <Link size={16} />}
         </TooltipTrigger>
         <TooltipContent side='bottom'>
-          <p>Copy Link</p>
+          {linkCopied ? <p>Link Copied</p> : <p>Copy Link</p>}
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

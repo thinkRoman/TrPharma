@@ -19,9 +19,7 @@ export function Products({ products }: { products: Product[] }) {
       <div className='flex flex-col items-center gap-6'>
         {products.map((product, index) => (
           <div key={index} id={product.id}>
-            <div className='group relative z-1 block md:hidden cursor-pointer max-w-sm bg-white transition-all hover:bg-gray-100'>
-              <ProductLink id={product.id} />
-
+            <div className='group z-1 block md:hidden cursor-pointer max-w-sm bg-white transition-all hover:bg-gray-100'>
               <div className='overflow-hidden flex justify-center bg-white group-hover:bg-white'>
                 <Image
                   src={product.img}
@@ -33,7 +31,8 @@ export function Products({ products }: { products: Product[] }) {
                 />
               </div>
 
-              <div className='flex flex-shrink-0 items-end px-4 pb-8 pt-6'>
+              <div className='flex relative flex-shrink-0 items-end px-4 pb-8 pt-6'>
+                <ProductLink id={product.id} />
                 <div className='flex flex-col gap-4'>
                   <span className='text-lg text-center font-medium'>
                     {product.heading}
@@ -46,12 +45,10 @@ export function Products({ products }: { products: Product[] }) {
 
             <div
               className={cn(
-                'group relative z-1 hidden h-[450px] md:flex justify-between items-center cursor-pointer w-full bg-white transition-all hover:bg-gray-100',
+                'group z-1 hidden h-[450px] md:flex justify-between items-center cursor-pointer w-full bg-white transition-all hover:bg-gray-100',
                 index & 1 && 'flex-row-reverse'
               )}
             >
-              <ProductLink id={product.id} />
-
               <div className='overflow-hidden w-2/3 h-full flex justify-center items-center bg-white group-hover:bg-white'>
                 <Image
                   src={product.img}
@@ -63,7 +60,8 @@ export function Products({ products }: { products: Product[] }) {
                 />
               </div>
 
-              <div className='flex items-end px-8 w-1/3'>
+              <div className='flex items-center relative h-full px-8 w-1/3'>
+                <ProductLink id={product.id} />
                 <div className='flex flex-col gap-4'>
                   <span className='text-lg text-center font-medium'>
                     {product.heading}
