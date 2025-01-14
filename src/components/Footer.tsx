@@ -11,7 +11,7 @@ import { WhatsAppIcon } from '@/components/icons/WhatsappIcon';
 
 import { siteConfig } from '@/constant/config';
 
-import Logo from '~/images/logo.png';
+import Logo from '~/images/tr-pharma-new-logo.png';
 
 export function Footer() {
   return (

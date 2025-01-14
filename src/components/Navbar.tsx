@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Logo from '~/images/logo.png';
+import Logo from '~/images/tr-pharma-new-logo.png';
 
 export function Navbar() {
   return (
