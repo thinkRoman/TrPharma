@@ -11,13 +11,32 @@ interface Product {
   heading: string;
   desc: string;
   tagline: string;
+  orderRank?: number;
 }
 
 export function Products({ products }: { products: Product[] }) {
+  // Sort products: lowest orderRank first, then products without orderRank
+  const sortedProducts = [...products].sort((a, b) => {
+    // If both have orderRank, compare them (lowest first)
+    if (a.orderRank !== undefined && b.orderRank !== undefined) {
+      return a.orderRank - b.orderRank;
+    }
+    // If only a has orderRank, a comes first
+    if (a.orderRank !== undefined) {
+      return -1;
+    }
+    // If only b has orderRank, b comes first
+    if (b.orderRank !== undefined) {
+      return 1;
+    }
+    // If neither has orderRank, maintain original order
+    return 0;
+  });
+
   return (
     <Container className='py-12 px-8'>
       <div className='flex flex-col items-center gap-6'>
-        {products.map((product, index) => (
+        {sortedProducts.map((product, index) => (
           <div key={index} id={product.id}>
             <div className='group z-1 block md:hidden cursor-pointer max-w-sm bg-white transition-all hover:bg-gray-100'>
               <div className='overflow-hidden flex justify-center bg-white group-hover:bg-white'>
