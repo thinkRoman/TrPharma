@@ -5,10 +5,12 @@ export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
   const pathname = request.nextUrl.pathname;
 
-  const oldDomain = 'trpharma.thinkroman.com';
+  const oldDomains = ['trpharma.thinkroman.com', 'pharma.thinkroman.com'];
   const newDomain = 'thinkromanpharma.com';
 
-  if (hostname.includes(oldDomain)) {
+  const isOldDomain = oldDomains.some(domain => hostname.includes(domain));
+
+  if (isOldDomain) {
     const isInternalRoute = pathname.startsWith('/api');
 
     if (!isInternalRoute) {
