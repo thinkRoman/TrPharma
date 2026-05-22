@@ -17,11 +17,14 @@ export function ProductLink({ id }: { id: string }) {
       <Tooltip>
         <TooltipTrigger
           className='top-2 right-2 absolute'
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
             navigator.clipboard.writeText(
-              `${window.location.origin}/products#${id}`
+              `${window.location.origin}/products/${id}`
             );
             setLinkCopied(true);
+            setTimeout(() => setLinkCopied(false), 2000);
           }}
         >
           {linkCopied ? <CheckCircle size={16} /> : <Link size={16} />}

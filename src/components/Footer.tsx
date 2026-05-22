@@ -10,6 +10,7 @@ import {
   Twitter,
   Youtube,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const footerLinks = {
@@ -53,21 +54,14 @@ export function Footer() {
         <div className='grid lg:grid-cols-5 gap-16 lg:gap-12'>
           {/* Brand column */}
           <div className='lg:col-span-2 space-y-8'>
-            <Link href='/' className='flex items-center gap-4'>
-              <div className='w-12 h-12 bg-accent flex items-center justify-center'>
-                <span className='text-accent-foreground font-medium text-lg'>
-                  Tr
-                </span>
-              </div>
-              <div>
-                <span className='text-primary-foreground font-medium text-xl tracking-wide block'>
-                  TrPharma
-                </span>
-                <span className='text-primary-foreground/50 text-xs tracking-widest uppercase'>
-                  ThinkRoman Ventures
-                </span>
-              </div>
-            </Link>
+             <Link href='/' className='flex items-center gap-4 bg-[#F7F3EA] w-max rounded-md p-1'>
+            <Image
+              src={"/images/logo.png"}
+              alt="Logo"
+              width={228}
+              height={228}
+            />
+          </Link>
 
             <p className='text-primary-foreground/60 leading-relaxed max-w-sm'>
               A division of ThinkRoman Ventures dedicated to delivering quality

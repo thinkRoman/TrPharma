@@ -2,12 +2,14 @@
 
 import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { ProductLink } from '@/components/ProductLink';
 
 interface Product {
   id: string;
+  slug: string;
   img: string;
   heading: string;
   desc: string;
@@ -109,75 +111,75 @@ export function Products({ products }: { products: Product[] }) {
         <div className='max-w-7xl mx-auto'>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {sortedProducts.map((product) => (
-              <article
-                key={product.id}
-                id={product.id}
-                className={`group bg-card rounded-2xl overflow-hidden border transition-all duration-700 hover:shadow-2xl relative ${
-                  highlightedId === product.id
-                    ? 'ring-2 ring-accent ring-offset-2 ring-offset-background border-accent shadow-2xl shadow-accent/20 scale-[1.02]'
-                    : highlightedId
-                      ? 'opacity-40 border-border'
-                      : 'border-border hover:border-accent/30'
-                }`}
-                itemScope
-                itemType='https://schema.org/Product'
-              >
-                {/* Product Image */}
-                <div className='relative h-56 bg-gradient-to-br from-muted to-background flex items-center justify-center overflow-hidden'>
-                  {product.img ? (
-                    <Image
-                      src={product.img}
-                      alt={product.heading}
-                      width={400}
-                      height={300}
-                      loading='lazy'
-                      className='relative z-0 w-auto h-full object-contain group-hover:scale-110 transition-transform duration-500'
-                    />
-                  ) : (
-                    <div className='relative z-0 w-32 h-32 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500'>
-                      <span className='font-serif text-3xl font-bold text-primary/40'>
-                        {product.heading.charAt(0)}
-                      </span>
-                    </div>
-                  )}
-                  {/* Copy Link */}
+              <Link href={`/products/${product.slug}`} key={product.id} className='block'>
+                <article
+                  id={product.id}
+                  className={`group bg-card rounded-2xl overflow-hidden border transition-all duration-700 hover:shadow-2xl relative h-full ${
+                    highlightedId === product.id
+                      ? 'ring-2 ring-accent ring-offset-2 ring-offset-background border-accent shadow-2xl shadow-accent/20 scale-[1.02]'
+                      : highlightedId
+                        ? 'opacity-40 border-border'
+                        : 'border-border hover:border-accent/30'
+                  }`}
+                  itemScope
+                  itemType='https://schema.org/Product'
+                >
+                  {/* Product Image */}
+                  <div className='relative h-56 bg-gradient-to-br from-muted to-background flex items-center justify-center overflow-hidden'>
+                    {product.img ? (
+                      <Image
+                        src={product.img}
+                        alt={product.heading}
+                        width={400}
+                        height={300}
+                        loading='lazy'
+                        className='relative z-0 w-auto h-full object-contain group-hover:scale-110 transition-transform duration-500'
+                      />
+                    ) : (
+                      <div className='relative z-0 w-32 h-32 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500'>
+                        <span className='font-serif text-3xl font-bold text-primary/40'>
+                          {product.heading.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                    {/* Copy Link */}
                   <div className='z-20'>
-                    <ProductLink id={product.id} />
+                    <ProductLink id={product.slug} />
                   </div>
-                </div>
+                  </div>
 
-                {/* Product Content */}
-                <div className='p-6'>
-                  {/* Product Name */}
-                  <h3
-                    className='font-serif text-2xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors'
-                    itemProp='name'
-                  >
-                    {product.heading}
-                  </h3>
+                  {/* Product Content */}
+                  <div className='p-6'>
+                    {/* Product Name */}
+                    <h3
+                      className='font-serif text-2xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors'
+                      itemProp='name'
+                    >
+                      {product.heading}
+                    </h3>
 
-                  {/* Tagline */}
-                  <p className='text-accent font-medium text-sm tracking-wide mb-4'>
-                    {product.tagline}
-                  </p>
+                    {/* Tagline */}
+                    <p className='text-accent font-medium text-sm tracking-wide mb-4'>
+                      {product.tagline}
+                    </p>
 
-                  {/* Description */}
-                  <p
-                    className='text-muted-foreground text-sm leading-relaxed mb-6'
-                    itemProp='description'
-                  >
-                    {product.desc}
-                  </p>
+                    {/* Description */}
+                    <p
+                      className='text-muted-foreground text-sm leading-relaxed mb-6'
+                      itemProp='description'
+                    >
+                      {product.desc}
+                    </p>
 
-                  {/* Hidden structured data for AI */}
-                  <meta itemProp='brand' content='TrPharma' />
-                  <meta
-                    itemProp='manufacturer'
-                    content='ThinkRoman Ventures LLP'
-                  />
-                </div>
-
-                 </article>
+                    {/* Hidden structured data for AI */}
+                    <meta itemProp='brand' content='TrPharma' />
+                    <meta
+                      itemProp='manufacturer'
+                      content='ThinkRoman Ventures LLP'
+                    />
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
 
