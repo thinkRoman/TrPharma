@@ -4,24 +4,22 @@ import { About } from '@/components/About';
 import { Articles } from '@/components/articles/Articles';
 import { CEO } from '@/components/CEO';
 import { DrugCategories } from '@/components/DrugCategories';
-import { Hero } from '@/components/Hero';
-import { MissionVision } from '@/components/MissionVision';
+import { HeroSection } from '@/components/Hero';
 import { Sunshine } from '@/components/Sunshine';
 
 import { getArticles } from '@/action/articles';
 
 export default async function HomePage() {
-  const articles = await getArticles();
+  // const articles = await getArticles();
 
   return (
-    <main>
-      <Hero />
-      <DrugCategories />
-      <MissionVision />
-      <Articles articles={articles} />
-      <Sunshine />
+    <main className='min-h-screen bg-background'>
+      <HeroSection />
       <About />
+      <DrugCategories />
+      <Sunshine />
       <CEO />
+      {/* <Articles articles={articles} /> */}
     </main>
   );
 }

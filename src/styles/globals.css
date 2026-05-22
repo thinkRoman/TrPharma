@@ -4,65 +4,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    /* Premium Editorial Pharma Palette */
+    /* Primary Dark: Graphite Black #121417 */
+    /* Secondary Dark: Deep Charcoal Navy #1A2230 */
+    /* Background: Bone White / Warm Ivory #F7F3EA */
+    /* Card Background: Soft Cream #FCFAF5 */
+    /* Accent Gold: Warm Champagne Gold #C7A15A */
+    /* Body Text: Soft Carbon #2B2F36 */
+    /* Muted Text: Warm Gray #6F7682 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
-
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
-
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
+    --background: 42 36% 94%;
+    --foreground: 222 12% 19%;
+    --card: 42 47% 97%;
+    --card-foreground: 222 12% 19%;
+    --popover: 42 47% 97%;
+    --popover-foreground: 222 12% 19%;
+    --primary: 220 10% 8%;
+    --primary-foreground: 42 36% 94%;
+    --secondary: 215 28% 14%;
+    --secondary-foreground: 42 36% 94%;
+    --muted: 40 18% 91%;
+    --muted-foreground: 222 7% 47%;
+    --accent: 40 49% 57%;
+    --accent-foreground: 220 10% 8%;
+    --destructive: 0 43% 50%;
+    --destructive-foreground: 42 36% 94%;
+    --border: 36 16% 86%;
+    --input: 42 47% 97%;
+    --ring: 40 49% 57%;
+    --radius: 0.375rem;
   }
 }
 
@@ -73,4 +43,208 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Editorial Gradient */
+.pharma-gradient {
+  background: linear-gradient(135deg, #121417 0%, #1A2230 100%);
+}
+
+.pharma-gradient-subtle {
+  background: linear-gradient(180deg, #FCFAF5 0%, #F7F3EA 100%);
+}
+
+/* Gold Accent Gradient */
+.gold-gradient {
+  background: linear-gradient(135deg, #C7A15A 0%, #D4AF6A 100%);
+}
+
+/* Quick Summary Block - AEO Optimized */
+.quick-summary {
+  background: #FCFAF5;
+  border-left: 3px solid #C7A15A;
+  padding: 1.5rem 2rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+  box-shadow: 0 2px 8px rgba(18, 20, 23, 0.04);
+}
+
+/* Entity Tags for GEO */
+.entity-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: #FCFAF5;
+  color: #2B2F36;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid #E5E0D5;
+  transition: all 0.3s ease;
+}
+
+.entity-tag:hover {
+  background: #121417;
+  color: #F7F3EA;
+  border-color: #121417;
+}
+
+/* FAQ Styling */
+.faq-item {
+  border-bottom: 1px solid #E5E0D5;
+  padding: 1.5rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Citation Block */
+.citation-block {
+  background: #FCFAF5;
+  border: 1px solid #E5E0D5;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  color: #6F7682;
+}
+
+/* Premium Card with Soft Shadow */
+.pharma-card {
+  background: #FCFAF5;
+  border: 1px solid #E5E0D5;
+  box-shadow: 0 2px 8px rgba(18, 20, 23, 0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pharma-card:hover {
+  box-shadow: 0 12px 32px rgba(18, 20, 23, 0.08);
+  border-color: #C7A15A;
+  transform: translateY(-4px);
+}
+
+/* Cinematic Product Card */
+.cinematic-card {
+  background: #FCFAF5;
+  border: none;
+  box-shadow: 0 4px 16px rgba(18, 20, 23, 0.06);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.cinematic-card:hover {
+  box-shadow: 0 20px 48px rgba(18, 20, 23, 0.12);
+  transform: translateY(-8px) scale(1.01);
+}
+
+.cinematic-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C7A15A, #D4AF6A);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.cinematic-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Editorial Typography */
+.editorial-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.editorial-subheading {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #6F7682;
+}
+
+/* Gold Underline */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #C7A15A;
+}
+
+/* Matte Button */
+.matte-button {
+  background: #121417;
+  color: #F7F3EA;
+  padding: 1rem 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.matte-button:hover {
+  background: #C7A15A;
+  color: #121417;
+}
+
+.matte-button-outline {
+  background: transparent;
+  color: #121417;
+  padding: 1rem 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  transition: all 0.3s ease;
+  border: 1px solid #121417;
+}
+
+.matte-button-outline:hover {
+  background: #121417;
+  color: #F7F3EA;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0EDE4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C7A15A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8934D;
 }

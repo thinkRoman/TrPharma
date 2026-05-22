@@ -1,97 +1,205 @@
-import Image from 'next/image';
+'use client';
+
+import {
+  ArrowRight,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Youtube,
+} from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
 
-import { Container } from '@/components/Container';
-import { FacebookIcon } from '@/components/icons/FacebookIcon';
-import { InstagramIcon } from '@/components/icons/InstagramIcon';
-import { LinkedInIcon } from '@/components/icons/LinkedInIcon';
-import { TwitterIcon } from '@/components/icons/TwitterIcon';
-import { WhatsAppIcon } from '@/components/icons/WhatsappIcon';
+const footerLinks = {
+  products: [
+    { label: 'All Products', href: '/products' },
+    { label: 'Bone Health', href: '/products' },
+    { label: 'Vitamin D', href: '/products' },
+    { label: 'Nutraceuticals', href: '/products' },
+  ],
+  company: [
+    { label: 'About Us', href: '#about' },
+    { label: 'Sunshine Campaign', href: '#sunshine' },
+    { label: 'Health Articles', href: '#articles' },
+    { label: 'Careers', href: '#' },
+  ],
+  support: [
+    { label: 'Contact Us', href: '/contact-us' },
+    { label: 'For Healthcare Professionals', href: '#' },
+    { label: 'For Distributors', href: '#' },
+    { label: 'FAQs', href: '#' },
+  ],
+  legal: [
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms & Conditions', href: '/terms-and-conditions' },
+    { label: 'Medical Disclaimer', href: '#' },
+  ],
+};
 
-import { siteConfig } from '@/constant/config';
-
-import Logo from '~/images/tr-pharma-new-logo.png';
+const socialLinks = [
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/thinkroman/', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://twitter.com/thinkRoman', label: 'Twitter' },
+  { icon: Instagram, href: 'https://www.instagram.com/tr.thinkroman/', label: 'Instagram' },
+  { icon: Youtube, href: 'https://www.youtube.com/@ThinkRomanTV', label: 'YouTube' },
+];
 
 export function Footer() {
   return (
-    <footer className='bg-[#EBEAE7] py-4'>
-      <Container>
-        <nav className='flex w-full flex-col' aria-label='Footer'>
-          <div className='flex w-full flex-col items-center justify-between gap-8 lg:flex-row'>
-            <Link href='/' className='flex items-center gap-2'>
-              <Image
-                src={Logo}
-                alt='logo'
-                width={200}
-                height={100}
-                className='h-16 w-auto object-cover'
-              />
+    <footer id='contact' className='relative bg-primary text-primary-foreground'>
+      {/* Main footer content */}
+      <div className='max-w-7xl mx-auto px-8 lg:px-12 py-20'>
+        <div className='grid lg:grid-cols-5 gap-16 lg:gap-12'>
+          {/* Brand column */}
+          <div className='lg:col-span-2 space-y-8'>
+            <Link href='/' className='flex items-center gap-4'>
+              <div className='w-12 h-12 bg-accent flex items-center justify-center'>
+                <span className='text-accent-foreground font-medium text-lg'>
+                  Tr
+                </span>
+              </div>
+              <div>
+                <span className='text-primary-foreground font-medium text-xl tracking-wide block'>
+                  TrPharma
+                </span>
+                <span className='text-primary-foreground/50 text-xs tracking-widest uppercase'>
+                  ThinkRoman Ventures
+                </span>
+              </div>
             </Link>
 
-            <div className='flex flex-col items-center justify-center space-y-4 lg:items-end'>
-              <div className='flex flex-wrap items-end justify-between gap-4 md:gap-8 lg:gap-4'>
-                <Link href='/privacy-policy'>
-                  <span className='text-xs text-gray-400 transition-all hover:text-gray-600 hover:underline hover:underline-offset-4'>
-                    Privacy Policy
-                  </span>
-                </Link>
+            <p className='text-primary-foreground/60 leading-relaxed max-w-sm'>
+              A division of ThinkRoman Ventures dedicated to delivering quality
+              pharmaceutical and nutraceutical products for bone health, vitamin
+              D supplementation, and wellness.
+            </p>
 
-                <Link href='/terms-and-conditions'>
-                  <span className='text-xs text-gray-400 transition-all hover:text-gray-600 hover:underline hover:underline-offset-4'>
-                    Terms and Conditions
-                  </span>
-                </Link>
-
-                <Link href='/contact-us'>
-                  <span className='text-xs text-gray-400 transition-all hover:text-gray-600 hover:underline hover:underline-offset-4'>
-                    Contact Us
-                  </span>
-                </Link>
+            {/* Contact info */}
+            <div className='space-y-4 pt-4'>
+              <div className='flex items-center gap-4 text-primary-foreground/60'>
+                <Mail className='w-4 h-4 text-accent' />
+                <span>contact@trpharma.com</span>
               </div>
-
-              <div className='flex justify-center gap-6'>
-                <Link href={siteConfig.socialLinks.instagram} target='_blank'>
-                  <InstagramIcon className='h-6 w-6' />
-                </Link>
-
-                <Link href={siteConfig.socialLinks.linkedin} target='_blank'>
-                  <LinkedInIcon className='h-6 w-6' />
-                </Link>
-
-                <Link href={siteConfig.socialLinks.whatsapp} target='_blank'>
-                  <WhatsAppIcon className='h-6 w-6' />
-                </Link>
-
-                <Link
-                  href={siteConfig.socialLinks.twitter}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <TwitterIcon className='h-6 w-6' />
-                </Link>
-
-                <Link href={siteConfig.socialLinks.facebook} target='_blank'>
-                  <FacebookIcon className='h-6 w-6' />
-                </Link>
+              <div className='flex items-center gap-4 text-primary-foreground/60'>
+                <Phone className='w-4 h-4 text-accent' />
+                <span>+91 81691 97853</span>
+              </div>
+              <div className='flex items-start gap-4 text-primary-foreground/60'>
+                <MapPin className='w-4 h-4 text-accent mt-1' />
+                <span>ThinkRoman Ventures LLP, India</span>
               </div>
             </div>
+
+            {/* Social links */}
+            <div className='flex items-center gap-3 pt-4'>
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target='_blank'
+                  className='p-3 bg-primary-foreground/5 text-primary-foreground/60 hover:text-accent hover:bg-primary-foreground/10 transition-colors'
+                >
+                  <Icon className='w-5 h-5' />
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className='mt-4 flex items-center justify-center'>
-            <span className='text-xs text-gray-400'>
-              &copy; {new Date().getFullYear()}&nbsp;
-              <Link
-                href='https://thinkroman.com/'
-                target='_blank'
-                className='hover:text-blue-500'
-              >
-                ThinkRoman
-              </Link>
-              &nbsp;Ventures LLP
-            </span>
+
+          {/* Links columns */}
+          <div className='lg:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8'>
+            <div>
+              <h4 className='font-medium text-primary-foreground text-sm tracking-widest uppercase mb-6'>
+                Products
+              </h4>
+              <ul className='space-y-4'>
+                {footerLinks.products.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className='text-primary-foreground/50 hover:text-accent transition-colors'
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className='font-medium text-primary-foreground text-sm tracking-widest uppercase mb-6'>
+                Company
+              </h4>
+              <ul className='space-y-4'>
+                {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className='text-primary-foreground/50 hover:text-accent transition-colors'
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className='font-medium text-primary-foreground text-sm tracking-widest uppercase mb-6'>
+                Support
+              </h4>
+              <ul className='space-y-4'>
+                {footerLinks.support.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className='text-primary-foreground/50 hover:text-accent transition-colors'
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className='font-medium text-primary-foreground text-sm tracking-widest uppercase mb-6'>
+                Legal
+              </h4>
+              <ul className='space-y-4'>
+                {footerLinks.legal.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className='text-primary-foreground/50 hover:text-accent transition-colors'
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </nav>
-      </Container>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className='border-t border-primary-foreground/10'>
+        <div className='max-w-7xl mx-auto px-8 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4'>
+          <p className='text-sm text-primary-foreground/40'>
+            © {new Date().getFullYear()} ThinkRoman Ventures LLP. All rights
+            reserved. For educational purposes only.
+          </p>
+          <div className='flex items-center gap-2 text-sm text-primary-foreground/40'>
+            <span>Part of</span>
+            <Link
+              href='https://thinkroman.com'
+              target='_blank'
+              className='text-accent font-medium hover:underline'
+            >
+              ThinkRoman Ventures LLP
+            </Link> 
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }

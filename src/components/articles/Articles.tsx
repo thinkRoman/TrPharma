@@ -1,85 +1,118 @@
 'use client';
 
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { ArrowRight, Clock, User } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
-import { useWindowSize } from 'rooks';
 
-import ArticleCard from '@/components/articles/ArticleCard';
 import { Article } from '@/components/articles/type';
-import { Container } from '@/components/Container';
 
 export function Articles({ articles }: { articles: Article[] }) {
-  const width = useWindowSize().innerWidth;
-  const maxArticles = width && width > 768 ? 2 : 1;
-  const [currentIndex, setCurrentIndex] = React.useState(0);
+  if (!articles || articles.length === 0) return null;
 
-  const handlePrevClick = () => {
-    setCurrentIndex(
-      currentIndex === 0
-        ? articles.length - maxArticles
-        : currentIndex - maxArticles
-    );
-  };
-
-  const handleNextClick = () => {
-    setCurrentIndex(
-      currentIndex === articles.length - maxArticles
-        ? 0
-        : currentIndex + maxArticles
-    );
-  };
-
-  if (!articles) return null;
+  // Show max 3 articles on the home page
+  const displayedArticles = articles.slice(0, 3);
 
   return (
-    <div id='wellness' className='bg-[#E7DEE0]'>
-      <Container className='max-w-5xl pb-6 pt-8'>
-        <div className='flex flex-col items-start justify-between gap-8 px-4 sm:flex-row'>
-          <div className='flex w-full flex-col gap-4 sm:w-1/4 sm:pt-4'>
-            <p className='text-lg font-semibold md:text-xl lg:text-2xl'>
-              Read Articles From ORZUV Our Health Magazine
+    <section
+      id='articles'
+      className='relative py-16 lg:py-24 bg-background overflow-hidden'
+    >
+      <div className='max-w-7xl mx-auto px-8 lg:px-12'>
+        {/* Section header */}
+        <div className='flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10'>
+          <div className='max-w-2xl'>
+            <p className='editorial-subheading mb-4'>ORZUV Health Magazine</p>
+            <h2 className='editorial-heading text-4xl md:text-5xl lg:text-6xl text-foreground mb-6'>
+              Health
+              <br />
+              <span className='text-accent'>Articles</span>
+            </h2>
+            <div className='w-16 h-0.5 bg-accent mb-6' />
+            <p className='text-lg text-muted-foreground'>
+              Expert insights on healthcare, wellness, and pharmaceutical
+              education
             </p>
-            <Link
-              href='https://orzuv.thinkroman.com/'
-              target='_blank'
-              className='rounded bg-blue-500 px-4 py-2 text-center font-medium text-white hover:bg-blue-600 md:w-40 md:text-lg'
-            >
-              See all articles
-            </Link>
           </div>
-          <div className='w-full sm:w-3/4'>
-            <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
-              {articles
-                .slice(currentIndex, currentIndex + maxArticles)
-                .map((article) => (
-                  <Link
-                    href={article.url}
-                    key={article.id}
-                    target='_blank'
-                    className='col-span-1 cursor-pointer rounded-lg bg-white'
-                  >
-                    <ArticleCard article={article} />
-                  </Link>
-                ))}
-            </div>
-            <div className='mt-4 flex w-full items-center justify-end space-x-4'>
-              <button
-                className='rounded-full bg-gray-200 p-2 shadow-md focus:outline-none'
-                onClick={handlePrevClick}
-              >
-                <ChevronLeftIcon className='h-5 w-5' />
-              </button>
-              <button
-                className='rounded-full bg-black p-2 text-white shadow-md focus:outline-none'
-                onClick={handleNextClick}
-              >
-                <ChevronRightIcon className='h-5 w-5' />
-              </button>
-            </div>
-          </div>
+          <Link
+            href='https://orzuv.thinkroman.com/'
+            target='_blank'
+            className='inline-flex items-center gap-2 text-accent font-medium tracking-widest uppercase text-sm hover:text-foreground transition-colors'
+          >
+            See all articles
+            <ArrowRight className='w-4 h-4' />
+          </Link>
         </div>
-      </Container>
-    </div>
+
+        {/* Quick Summary for AEO */}
+        <div className='quick-summary max-w-3xl mb-10'>
+          <p className='text-xs font-semibold text-accent mb-2 tracking-widest uppercase'>
+            What topics does TrPharma cover?
+          </p>
+          <p className='text-foreground/80 leading-relaxed text-lg'>
+            Our health magazine ORZUV covers bone health, vitamin D awareness,
+            nutraceutical education, preventive healthcare, and wellness topics
+            relevant to Indian patients and healthcare professionals.
+          </p>
+        </div>
+
+        {/* Articles grid - Cinematic cards */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {displayedArticles.map((article) => (
+            <Link
+              href={article.url}
+              key={article.id}
+              target='_blank'
+              className='group'
+            >
+              <article className='cinematic-card rounded-sm overflow-hidden h-full'>
+                {/* Image */}
+                <div className='aspect-[16/10] bg-muted relative overflow-hidden'>
+                  <Image
+                    src={article.featuredImage.url}
+                    alt={article.title}
+                    width={article.featuredImage.width}
+                    height={article.featuredImage.height}
+                    className='w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500'
+                  />
+                </div>
+
+                {/* Content */}
+                <div className='p-8 space-y-4'>
+                  <h3 className='text-xl font-medium text-foreground group-hover:text-accent transition-colors leading-snug tracking-tight'>
+                    {article.title}
+                  </h3>
+                  <p className='text-muted-foreground leading-relaxed line-clamp-2'>
+                    {article.description}
+                  </p>
+
+                  {/* Meta */}
+                  <div className='flex items-center justify-between pt-6 border-t border-border text-sm text-muted-foreground'>
+                    <div className='flex items-center gap-2'>
+                      <User className='w-4 h-4' />
+                      <span className='truncate max-w-[140px]'>
+                        {article.author.name}
+                      </span>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <Clock className='w-4 h-4' />
+                      <span>{article.readingTime}</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+
+        {/* Citation */}
+        <div className='mt-10 text-center'>
+          <p className='text-sm text-muted-foreground'>
+            Articles reviewed by TrPharma Medical Team. For educational purposes
+            only.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }

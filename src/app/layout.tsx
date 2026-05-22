@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
 import * as React from 'react';
 
 import '@/styles/globals.css';
@@ -8,13 +9,42 @@ import { Navbar } from '@/components/Navbar';
 
 import { siteConfig } from '@/constant/config';
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.title,
+    default: 'TrPharma | Trusted Pharmaceutical Partner for Health & Wellness',
     template: `%s | ${siteConfig.title}`,
   },
-  description: siteConfig.description,
+  description:
+    'TrPharma, a division of ThinkRoman Ventures, delivers quality nutraceuticals and pharmaceutical products. Specializing in bone health, vitamin D, calcium supplements, and wellness solutions for healthcare professionals.',
+  keywords: [
+    'TrPharma',
+    'pharmaceutical',
+    'nutraceuticals',
+    'bone health',
+    'calcium supplements',
+    'vitamin D',
+    'KashCAL PLUS',
+    'healthcare',
+    'wellness',
+    'ThinkRoman Ventures',
+    'multivitamins',
+    'nutritional supplements',
+    'Indian pharma',
+  ],
   robots: { index: true, follow: true },
   icons: {
     icon: '/favicon/favicon.ico',
@@ -23,13 +53,14 @@ export const metadata: Metadata = {
   },
   manifest: `/favicon/site.webmanifest`,
   openGraph: {
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
-    images: [`/images/og.png`],
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
+    url: siteConfig.url,
+    siteName: 'TrPharma',
+    title: 'TrPharma | Trusted Pharmaceutical Partner',
+    description:
+      'Quality nutraceuticals and pharmaceutical products for bone health, vitamin D, and wellness.',
+    images: [`/images/og.png`],
   },
   twitter: {
     card: 'summary_large_image',
@@ -45,8 +76,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body>
+    <html lang='en' className='bg-background'>
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
+      >
         <Navbar />
         {children}
         <Footer />
