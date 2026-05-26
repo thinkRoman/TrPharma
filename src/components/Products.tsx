@@ -91,16 +91,14 @@ export function Products({ products }: { products: Product[] }) {
             <span className='text-accent'>Products</span>
           </h1>
           <p className='text-primary-foreground/80 text-xl md:text-2xl max-w-2xl leading-relaxed font-light'>
-            Trusted formulations designed for Indian healthcare needs. Quality
+            Trusted formulations-Quality
             you can depend on.
           </p>
 
           {/* Quick Summary for AI/SEO */}
           <div className='mt-12 p-6 bg-secondary/20 rounded-lg border border-accent/20'>
             <p className='text-primary-foreground/90 text-sm leading-relaxed'>
-              <strong className='text-accent'>Quick Summary:</strong> TrPharma
-              offers {products.length} pharmaceutical products manufactured to
-              IP/USP standards.
+              <strong className='text-accent'>Our Products:</strong> TrPharma specializes in pharmaceuticals and nutraceuticals across multiple therapeutic categories including antibiotics, pain management, bone and joint health, women’s health, gastrointestinal care, respiratory and allergy care, cardiac and metabolic health, diabetes support, vitamins, nutrition, and preventive wellness solutions
             </p>
           </div>
         </div>
