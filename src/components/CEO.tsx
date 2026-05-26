@@ -38,10 +38,10 @@ export function CEO() {
 
               <div className='text-center pt-2'>
                 <h3 className='text-2xl font-medium text-foreground tracking-tight'>
-                  Dr. Ashwani Dhar
+                  Dr. Ashwani Dhar MD, DMI
                 </h3>
                 <p className='text-accent font-medium mt-1'>
-                  MD, Founder &amp; CEO
+                  Founder &amp; CEO
                 </p>
                 <p className='text-sm text-muted-foreground mt-1'>
                   ThinkRoman Ventures
@@ -79,7 +79,7 @@ export function CEO() {
                 CEO Vision Summary
               </p>
               <p className='text-foreground/80 leading-relaxed text-lg'>
-                Dr. Ashwani Dhar, a practicing physician and entrepreneur,
+                Dr. Ashwani Dhar, a physician and entrepreneur,
                 founded TrPharma with a mission to deliver quality
                 pharmaceutical products that support healthcare professionals in
                 providing accessible and effective patient care across India.
