@@ -14,8 +14,6 @@ export default async function HomePage() {
 
   return (
     <main className='min-h-screen bg-background'>
-      <HeroSection />
-      <About />
       <DrugCategories />
       <Sunshine />
       <CEO />
