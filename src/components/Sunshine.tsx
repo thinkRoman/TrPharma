@@ -72,12 +72,14 @@ export function Sunshine() {
 
             {/* CTA */}
             <Link
-              href='#contact'
-              className='inline-flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground font-medium tracking-widest uppercase text-sm hover:bg-accent/90 transition-all'
-            >
-              KNOW ABOUT THE CAMPAIGN
-              <ArrowRight className='w-4 h-4' />
-            </Link>
+  href='https://sunshine.thinkroman.com/en'
+  target='_blank'
+  rel='noopener noreferrer'
+  className='inline-flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground font-medium tracking-widest uppercase text-sm hover:bg-accent/90 transition-all'
+>
+  KNOW ABOUT THE CAMPAIGN
+  <ArrowRight className='w-4 h-4' />
+</Link>
           </div>
 
           {/* Right - Stats Card */}
