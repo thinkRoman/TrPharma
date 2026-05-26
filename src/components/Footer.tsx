@@ -65,8 +65,7 @@ export function Footer() {
 
             <p className='text-primary-foreground/60 leading-relaxed max-w-sm'>
               A division of ThinkRoman Ventures dedicated to delivering quality
-              pharmaceutical and nutraceutical products for bone health, vitamin
-              D supplementation, and wellness.
+              pharmaceutical and nutraceutical products.
             </p>
 
             {/* Contact info */}
