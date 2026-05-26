@@ -15,27 +15,25 @@ import Link from 'next/link';
 
 const footerLinks = {
   products: [
-    { label: 'All Products', href: '/products' },
-    { label: 'Bone Health', href: '/products' },
-    { label: 'Vitamin D', href: '/products' },
-    { label: 'Nutraceuticals', href: '/products' },
+    { label: 'All Products', href: '/#products' },
+    { label: 'Bone Health', href: '/#products' },
+    { label: 'Vitamin D', href: '/#products' },
+    { label: 'Nutraceuticals', href: '/#products' },
   ],
   company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'Sunshine Campaign', href: '#sunshine' },
-    { label: 'Health Articles', href: '#articles' },
-    { label: 'Careers', href: '#' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Sunshine Campaign', href: '/about#sunshine' },
+    { label: 'Health Articles', href: 'https://orzuv.thinkroman.com' }
   ],
   support: [
     { label: 'Contact Us', href: '/contact-us' },
     { label: 'For Healthcare Professionals', href: '#' },
     { label: 'For Distributors', href: 'https://pharmacy.thinkroman.com/distributor-form' },
-    { label: 'FAQs', href: '#' },
+    { label: 'FAQs', href: '/' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms & Conditions', href: '/terms-and-conditions' },
-    { label: 'Medical Disclaimer', href: '#' },
   ],
 };
 

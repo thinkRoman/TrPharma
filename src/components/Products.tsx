@@ -80,7 +80,7 @@ export function Products({ products }: { products: Product[] }) {
   return (
     <main className='min-h-screen bg-background'>
       {/* Hero Section */}
-      <section className='pt-32 pb-20 px-6 lg:px-8 bg-primary'>
+      <section className='pt-24 md:pt-32 pb-10 md:pb-20 px-6 lg:px-8 bg-primary'>
         <div className='max-w-7xl mx-auto'>
           <p className='text-accent text-sm font-medium tracking-[0.2em] uppercase mb-6'>
             TrPharma Product Catalog
@@ -96,7 +96,7 @@ export function Products({ products }: { products: Product[] }) {
           </p>
 
           {/* Quick Summary for AI/SEO */}
-          <div className='mt-12 p-6 bg-secondary/20 rounded-lg border border-accent/20'>
+          <div className='hidden md:block mt-12 p-6 bg-secondary/20 rounded-lg border border-accent/20'>
             <p className='text-primary-foreground/90 text-sm leading-relaxed'>
               <strong className='text-accent'>Our Products:</strong> TrPharma specializes in pharmaceuticals and nutraceuticals across multiple therapeutic categories including antibiotics, pain management, bone and joint health, women’s health, gastrointestinal care, respiratory and allergy care, cardiac and metabolic health, diabetes support, vitamins, nutrition, and preventive wellness solutions
             </p>
@@ -105,7 +105,7 @@ export function Products({ products }: { products: Product[] }) {
       </section>
 
       {/* Products Grid */}
-      <section className='py-20 px-6 lg:px-8'>
+      <section id='products' className='py-20 px-6 lg:px-8'>
         <div className='max-w-7xl mx-auto'>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {sortedProducts.map((product) => (

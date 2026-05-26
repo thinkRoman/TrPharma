@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export function CEO() {
   return (
-    <section className='relative py-16 lg:py-24 bg-card overflow-hidden'>
+    <section id='ceo' className='relative py-16 lg:py-24 bg-card overflow-hidden'>
       <div className='max-w-7xl mx-auto px-8 lg:px-12'>
         {/* Section header - Editorial style */}
         <div className='max-w-3xl mb-12'>

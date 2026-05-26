@@ -19,10 +19,9 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/products', label: 'Products' },
-    { href: '#about', label: 'About' },
-    { href: '#articles', label: 'Health Articles' },
-    { href: '#sunshine', label: 'Sunshine Campaign' },
+    { href: '/about', label: 'About' },
+    { href: '/about#ceo', label: 'CEO' },
+    { href: '/about#sunshine', label: 'Sunshine Campaign' },
   ];
 
   return (
@@ -60,7 +59,7 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className='hidden lg:flex items-center gap-4'>
-            <Link href='/products' className='matte-button'>
+            <Link href='/#products' className='matte-button'>
               View Products
             </Link>
           </div>
