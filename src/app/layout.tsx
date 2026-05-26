@@ -77,6 +77,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='bg-background'>
+      <head>
+      <meta name="google-site-verification" content="Q5pgrJR97DtdVeEGSi2xIFaS1J3zHSHvLsMf3X11MjQ" />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
