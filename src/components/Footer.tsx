@@ -29,7 +29,7 @@ const footerLinks = {
   support: [
     { label: 'Contact Us', href: '/contact-us' },
     { label: 'For Healthcare Professionals', href: '#' },
-    { label: 'For Distributors', href: '#' },
+    { label: 'For Distributors', href: 'https://pharmacy.thinkroman.com/distributor-form' },
     { label: 'FAQs', href: '#' },
   ],
   legal: [
@@ -42,7 +42,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/company/thinkroman/', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com/thinkRoman', label: 'Twitter' },
-  { icon: Instagram, href: 'https://www.instagram.com/tr.thinkroman/', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/trpharma187/', label: 'Instagram' },
   { icon: Youtube, href: 'https://www.youtube.com/@ThinkRomanTV', label: 'YouTube' },
 ];
 
@@ -72,7 +72,7 @@ export function Footer() {
             <div className='space-y-4 pt-4'>
               <div className='flex items-center gap-4 text-primary-foreground/60'>
                 <Mail className='w-4 h-4 text-accent' />
-                <span>contact@trpharma.com</span>
+                <span>trpharma@thinkroman.com</span>
               </div>
               <div className='flex items-center gap-4 text-primary-foreground/60'>
                 <Phone className='w-4 h-4 text-accent' />
