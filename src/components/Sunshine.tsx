@@ -40,7 +40,7 @@ export function Sunshine() {
               </p>
               <p className='text-secondary-foreground/80 leading-relaxed text-lg'>
                 The Sunshine Campaign is TrPharma&apos;s initiative to raise
-                awareness about vitamin D deficiency in India and provide
+                awareness about vitamin D deficiency and provide
                 accessible healthcare solutions to underserved communities.
               </p>
             </div>
@@ -75,7 +75,7 @@ export function Sunshine() {
               href='#contact'
               className='inline-flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground font-medium tracking-widest uppercase text-sm hover:bg-accent/90 transition-all'
             >
-              Join the Campaign
+              KNOW ABOUT THE CAMPAIGN
               <ArrowRight className='w-4 h-4' />
             </Link>
           </div>
@@ -93,7 +93,7 @@ export function Sunshine() {
                   { icon: MapPin, value: '15+', label: 'Cities Covered' },
                   {
                     icon: Heart,
-                    value: '5,000+',
+                    value: '500+',
                     label: 'Free Health Camps',
                   },
                   {
