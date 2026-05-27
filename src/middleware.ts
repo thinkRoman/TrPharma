@@ -9,6 +9,21 @@ export function middleware(request: NextRequest) {
   const newDomain = 'thinkromanpharma.com';
 
   const isOldDomain = oldDomains.some(domain => hostname.includes(domain));
+  const isProductsLandingRoute = pathname === '/products' || pathname === '/products/';
+
+  if (isProductsLandingRoute) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/';
+    url.hash = 'products';
+
+    if (isOldDomain) {
+      url.hostname = newDomain;
+      url.port = '';
+      url.protocol = 'https:';
+    }
+
+    return NextResponse.redirect(url, 308);
+  }
 
   if (isOldDomain) {
     const isInternalRoute = pathname.startsWith('/api');
