@@ -45,28 +45,7 @@ const faqs = [
 
 export function Products({ products }: { products: Product[] }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [highlightedId, setHighlightedId] = useState<string | null>(null);
 
-  // Detect hash on mount and scroll to + highlight that product
-  useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (!hash) return;
-
-    // Small delay to let the grid render
-    const scrollTimeout = setTimeout(() => {
-      const el = document.getElementById(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setHighlightedId(hash);
-
-        // Auto-fade after 4 seconds
-        const fadeTimeout = setTimeout(() => setHighlightedId(null), 4000);
-        return () => clearTimeout(fadeTimeout);
-      }
-    }, 300);
-
-    return () => clearTimeout(scrollTimeout);
-  }, []);
   // Sort products: lowest orderRank first, then products without orderRank
   const sortedProducts = [...products].sort((a, b) => {
     if (a.orderRank !== undefined && b.orderRank !== undefined) {
@@ -112,13 +91,7 @@ export function Products({ products }: { products: Product[] }) {
               <Link href={`/products/${product.slug}`} key={product.id} className='block'>
                 <article
                   id={product.id}
-                  className={`group bg-card rounded-2xl overflow-hidden border transition-all duration-700 hover:shadow-2xl relative h-full ${
-                    highlightedId === product.id
-                      ? 'ring-2 ring-accent ring-offset-2 ring-offset-background border-accent shadow-2xl shadow-accent/20 scale-[1.02]'
-                      : highlightedId
-                        ? 'opacity-40 border-border'
-                        : 'border-border hover:border-accent/30'
-                  }`}
+                  className={`group bg-card rounded-2xl overflow-hidden border transition-all duration-700 hover:shadow-2xl relative h-full`}
                   itemScope
                   itemType='https://schema.org/Product'
                 >
