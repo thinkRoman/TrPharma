@@ -1,5 +1,6 @@
 import { Activity, ArrowUpRight, Bone, Heart, Pill, ShieldPlus, Stethoscope, Wind } from 'lucide-react';
 import Link from 'next/link';
+
 import { categories } from '@/lib/products';
 const icons = [Pill, Activity, ShieldPlus, Wind, Bone, Heart, Stethoscope, Heart];
 export function DrugCategories() {

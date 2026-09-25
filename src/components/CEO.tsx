@@ -27,7 +27,7 @@ export function CEO() {
               {/* Profile image placeholder */}
               <div className='w-40 h-40 mx-auto bg-muted flex items-center justify-center mb-8'>
                 <Image
-                  src={'/images/ceo.jpeg'}
+                  src="/images/ceo.jpeg"
                   alt='Dr. Ashwani Dhar, founder and CEO of ThinkRoman'
                   width={1000}
                   height={1000}

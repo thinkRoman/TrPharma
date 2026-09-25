@@ -4,6 +4,7 @@ import { Search, X } from 'lucide-react';
 import { useState } from 'react';
 
 import { categories, Product, productCategory, sortProducts } from '@/lib/products';
+
 import { ProductCard } from '@/components/ProductCard';
 
 export function Products({ products, initialCategory = 'All products' }: { products: Product[]; initialCategory?: string }) {

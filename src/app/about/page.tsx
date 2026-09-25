@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+
 import { CEO } from '@/components/CEO';
 import { Sunshine } from '@/components/Sunshine';
 export const metadata: Metadata = { title: 'About TrPharma' };

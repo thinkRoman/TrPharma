@@ -7,7 +7,9 @@ import { notFound } from 'next/navigation';
 
 import { Product, productCategory } from '@/lib/products';
 import { generateSEO } from '@/lib/seo';
+
 import { ProductSchema } from '@/components/Schema';
+
 import { getProducts } from '@/action/products';
 
 interface PageProps { params: { slug: string } }
