@@ -1,103 +1,49 @@
 'use client';
 
-import { Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
+
+const links = [
+  { href: '/products', label: 'Products' },
+  { href: '/#therapeutic-areas', label: 'Therapeutic areas' },
+  { href: '/about', label: 'About' },
+  { href: '/contact-us', label: 'Contact' },
+];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const toggle = useRef<HTMLButtonElement>(null);
+  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    if (!open) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setOpen(false); toggle.current?.focus(); }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/about#ceo', label: 'CEO' },
-    { href: '/about#sunshine', label: 'Sunshine Campaign' },
-  ];
-
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [open]);
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-card/98 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className='max-w-7xl mx-auto px-8 lg:px-12'>
-        <div className='flex items-center justify-between h-20'>
-          {/* Logo */}
-          <Link href='/' className='flex items-center gap-4 bg-[#F7F3EA] rounded-md p-1'>
-            <Image
-              src={"/images/logo.png"}
-              alt="Logo"
-              width={128}
-              height={128}
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className='hidden lg:flex items-center gap-10'>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className='text-muted-foreground hover:text-foreground transition-colors text-sm tracking-wide uppercase font-medium'
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className='hidden lg:flex items-center gap-4'>
-            <Link href='/#products' className='matte-button'>
-              View Products
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className='lg:hidden p-2 text-foreground'
-            aria-label='Toggle menu'
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+    <header className='site-header'>
+      <a href='#main-content' className='skip-link'>Skip to content</a>
+      <div className='shell header-inner'>
+        <Link href='/' aria-label='TrPharma home' onClick={() => setOpen(false)} className='brand'>
+          <Image src='/images/logo.png' alt='TrPharma' width={398} height={138} priority />
+          <span>FROM THINKROMAN</span>
+        </Link>
+        <nav aria-label='Main navigation' className='desktop-nav'>
+          {links.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? 'page' : undefined}>{link.label}</Link>)}
+        </nav>
+        <Link href='/contact-us#partners' className='button button-outline header-cta'>Partner with us <ArrowUpRight size={16} /></Link>
+        <button ref={toggle} type='button' className='menu-toggle' aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls='mobile-navigation' onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className='lg:hidden bg-card border-t border-border'>
-          <div className='px-8 py-8 space-y-4'>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className='block text-foreground hover:text-accent transition-colors py-3 font-medium tracking-wide uppercase text-sm border-b border-border'
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href='/products'
-              className='block w-full text-center matte-button mt-6'
-            >
-              View Products
-            </Link>
-          </div>
-        </div>
-      )}
-    </nav>
+      {open && <nav id='mobile-navigation' aria-label='Mobile navigation' className='mobile-nav shell'>
+        {links.map(link => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}<ArrowUpRight size={16} /></Link>)}
+        <Link href='/contact-us#partners' className='button' onClick={() => setOpen(false)}>Partner with us <ArrowUpRight size={16} /></Link>
+      </nav>}
+    </header>
   );
 }
