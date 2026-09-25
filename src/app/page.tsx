@@ -102,6 +102,13 @@ export default async function HomePage() {
           {selection.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+          <Link href='/products' className='catalog-cta-card'>
+            <span className='catalog-cta-mark' aria-hidden='true'>↗</span>
+            <span className='eyebrow'>THE FULL RANGE</span>
+            <h3>Explore all products</h3>
+            <p>Browse every therapeutic area and formulation.</p>
+            <span className='catalog-cta-link'>View all products <ArrowUpRight size={18} /></span>
+          </Link>
         </div>
       </section>
       <section className='section company-section'>
