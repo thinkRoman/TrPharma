@@ -472,8 +472,9 @@ h2 em {
   overflow: hidden;
   padding: 30px;
   border-radius: 12px;
-  background: hsl(var(--primary));
-  color: white;
+  background: #f6e9ee;
+  color: #8f1d2c;
+  border: 1px solid #8f1d2c29;
 }
 .catalog-cta-card::before {
   content: '';
@@ -486,12 +487,12 @@ h2 em {
   border-radius: 50%;
   box-shadow: 0 0 0 28px #ffffff0d, 0 0 0 56px #ffffff09;
 }
-.catalog-cta-card:hover { background: #77152e; }
-.catalog-cta-card .eyebrow { position: relative; margin-bottom: 12px; color: #f4c8d2; }
+.catalog-cta-card:hover { background: #f3e0e7; border-color: #8f1d2c55; }
+.catalog-cta-card .eyebrow { position: relative; margin-bottom: 12px; color: #8f1d2c; }
 .catalog-cta-card h3 { position: relative; max-width: 220px; margin-bottom: 12px; font-size: 27px; font-weight: 450; }
-.catalog-cta-card p { position: relative; max-width: 230px; margin-bottom: 28px; color: #f7e9ec; font-size: 14px; line-height: 1.7; }
-.catalog-cta-mark { position: absolute; top: 28px; right: 28px; display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #ffffff54; border-radius: 50%; font-size: 25px; }
-.catalog-cta-link { position: relative; display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid #ffffff40; font-size: 12px; font-weight: 600; }
+.catalog-cta-card p { position: relative; max-width: 230px; margin-bottom: 28px; color: #744b54; font-size: 14px; line-height: 1.7; }
+.catalog-cta-mark { position: absolute; top: 28px; right: 28px; display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #8f1d2c55; border-radius: 50%; font-size: 25px; }
+.catalog-cta-link { position: relative; display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid #8f1d2c40; font-size: 12px; font-weight: 600; }
 .product-image {
   height: 245px;
   background: #f1f2ec;
