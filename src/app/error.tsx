@@ -1,38 +1,31 @@
-'use client'; // Error components must be Client Components
-
-import * as React from 'react';
-import { RiAlarmWarningFill } from 'react-icons/ri';
-
-import TextButton from '@/components/buttons/TextButton';
-
+'use client';
+import Link from 'next/link';
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  React.useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.error(error);
-  }, [error]);
-
   return (
-    <main>
-      <section className='bg-white'>
-        <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-black'>
-          <RiAlarmWarningFill
-            size={60}
-            className='drop-shadow-glow animate-flicker text-red-500'
-          />
-          <h1 className='mt-8 text-4xl md:text-6xl'>
-            Oops, something went wrong!
-          </h1>
-          <TextButton variant='basic' onClick={reset} className='mt-4'>
-            Try again
-          </TextButton>
-        </div>
-      </section>
+    <main id='main-content' className='shell page-hero'>
+      <p className='eyebrow'>LET’S TRY THAT AGAIN</p>
+      <h1>
+        This page is
+        <br />
+        <em>temporarily unavailable.</em>
+      </h1>
+      <p className='intro'>
+        We couldn’t load the information just now. Try again, or contact our
+        team for help with a product enquiry.
+      </p>
+      <div className='hero-actions'>
+        <button type='button' className='button' onClick={reset}>
+          Try again
+        </button>
+        <Link className='text-link' href='/contact-us'>
+          Contact our team ↗
+        </Link>
+      </div>
     </main>
   );
 }

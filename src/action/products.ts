@@ -10,8 +10,13 @@ export const getProducts = unstable_cache(
         'Content-Type': 'application/json',
         authorization: process.env.PHARMA_API_SECRET as string,
       },
-    }).then((res) => res.json());
-    return res.data;
+    });
+    if (!res.ok)
+      throw new Error(`Product catalog request failed (${res.status})`);
+    const payload = await res.json();
+    if (!Array.isArray(payload.data))
+      throw new Error('Invalid product catalog response');
+    return payload.data;
   },
   ['products'],
   {

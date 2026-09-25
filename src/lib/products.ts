@@ -14,8 +14,14 @@ export interface Product {
 }
 
 export const categories = [
-  'Antibiotics', 'Pain management', 'Gastric care', 'Respiratory care',
-  'Vitamins & supplements', "Women’s health", 'Diabetes care', 'Cardiovascular',
+  'Antibiotics',
+  'Pain management',
+  'Gastric care',
+  'Respiratory care',
+  'Vitamins & supplements',
+  'Women’s health',
+  'Diabetes care',
+  'Cardiovascular',
 ];
 
 // Preserve the existing product feed; provide navigation labels for its established range.
@@ -24,22 +30,62 @@ const categorySlugs: Record<string, string[]> = {
   'Pain management': ['one87-plus', 'comfortide-425', 'reliefon-forte'],
   'Gastric care': ['acidblock-40', 'acidblock-d'],
   'Respiratory care': ['kashair-m'],
-  'Vitamins & supplements': ['880-plus', '880-junior', 'sohar-d-60k', 'kashcal-tm-plus'],
+  'Vitamins & supplements': [
+    '880-plus',
+    '880-junior',
+    'sohar-d-60k',
+    'kashcal-tm-plus',
+  ],
   'Women’s health': ['280-plus', 'progestasyn-200'],
   'Diabetes care': ['tc-a1c'],
   Cardiovascular: ['suwake-40', 'zoovistat-20'],
 };
 
 export function productCategory(product: Product) {
-  return Object.entries(categorySlugs).find(([, slugs]) => slugs.includes(product.slug.toLowerCase()))?.[0]
-    || product.category || 'Other products';
+  return (
+    Object.entries(categorySlugs).find(([, slugs]) =>
+      slugs.includes(product.slug.toLowerCase())
+    )?.[0] ||
+    product.category ||
+    'Other products'
+  );
+}
+
+export function productComposition(product: Product) {
+  if (product.ingredients?.length) return product.ingredients.join(' · ');
+  const blocks = (product.longDesc || []).filter(
+    (block) => block._type === 'block'
+  );
+  for (let index = 0; index < blocks.length - 1; index++) {
+    const label = blocks[index].children
+      .map((child) => child.text || '')
+      .join('')
+      .trim();
+    if (
+      /^(generic name|composition|active ingredients|ingredients)[:\s]*$/i.test(
+        label
+      )
+    ) {
+      return blocks[index + 1].children
+        .map((child) => child.text || '')
+        .join('')
+        .trim();
+    }
+  }
+  return '';
 }
 
 export function productSummary(product: Product) {
-  if (product.ingredients?.length) return product.ingredients.join(' · ');
-  return product.desc;
+  return (
+    productComposition(product) ||
+    `${productCategory(
+      product
+    )}. Explore formulation details and product information.`
+  );
 }
 
 export function sortProducts(products: Product[]) {
-  return [...products].sort((a, b) => (a.orderRank ?? Infinity) - (b.orderRank ?? Infinity));
+  return [...products].sort(
+    (a, b) => (a.orderRank ?? Infinity) - (b.orderRank ?? Infinity)
+  );
 }

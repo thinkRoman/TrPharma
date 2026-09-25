@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
   const oldDomains = ['trpharma.thinkroman.com', 'pharma.thinkroman.com'];
   const newDomain = 'thinkromanpharma.com';
 
-  const isOldDomain = oldDomains.some(domain => hostname.includes(domain));
+  const isOldDomain = oldDomains.some((domain) => hostname.includes(domain));
 
   if (isOldDomain) {
     const isInternalRoute = pathname.startsWith('/api');
@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
       url.hostname = newDomain;
       url.port = '';
       url.protocol = 'https:';
-      
+
       return NextResponse.redirect(url, 301);
     }
   }
@@ -27,7 +27,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico).*)',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };
