@@ -7,12 +7,12 @@ import {
   PackageCheck,
 } from 'lucide-react';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Product, sortProducts } from '@/lib/products';
 
 import { DrugCategories } from '@/components/DrugCategories';
+import { FeaturedProducts } from '@/components/FeaturedProducts';
 import { ProductCard } from '@/components/ProductCard';
 import { Sunshine } from '@/components/Sunshine';
 
@@ -26,14 +26,19 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const products: Product[] = await getProducts();
-  const featuredNames = ['kashcal-tm-plus', '880-plus', 'sohar-d-60k'];
+  const featuredNames = [
+    'kashcal-tm-plus',
+    '880-plus',
+    'sohar-d-60k',
+    'kashmox-625',
+    'acidblock-40',
+  ];
   const featured = featuredNames
     .map((slug) => products.find((product) => product.slug === slug))
     .filter((product): product is Product => Boolean(product));
   const selection = featured.length
     ? featured
     : sortProducts(products).slice(0, 3);
-  const heroProduct = selection[0];
   return (
     <main id='main-content'>
       <section className='shell home-hero'>
@@ -61,42 +66,13 @@ export default async function HomePage() {
             Supporting healthcare across India
           </p>
         </div>
-        <div className='hero-showcase'>
-          <div className='showcase-top'>
-            <span>SCIENCE. CARE. EVERYDAY.</span>
-            <FlaskConical size={22} strokeWidth={1.4} />
-          </div>
-          <div className='showcase-image'>
-            {heroProduct?.img ? (
-              <Image
-                src={heroProduct.img}
-                alt={heroProduct.heading}
-                width={560}
-                height={420}
-                sizes='(max-width: 768px) 90vw, 45vw'
-                priority
-              />
-            ) : (
-              <PackageCheck size={100} strokeWidth={1} />
-            )}
-          </div>
-          <div className='showcase-caption'>
-            <div>
-              <span>FROM OUR RANGE</span>
-              <h2>{heroProduct?.heading || 'Made for everyday care'}</h2>
-            </div>
-            <Link
-              href={heroProduct ? `/products/${heroProduct.slug}` : '/products'}
-              aria-label={
-                heroProduct
-                  ? `Explore ${heroProduct.heading}`
-                  : 'Explore products'
-              }
-            >
-              <ArrowUpRight size={24} />
-            </Link>
-          </div>
-        </div>
+        <FeaturedProducts
+          products={selection.map(({ slug, heading, img }) => ({
+            slug,
+            heading,
+            img,
+          }))}
+        />
       </section>
       <div className='principles-bar'>
         <div className='shell'>

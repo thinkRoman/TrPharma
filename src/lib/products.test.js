@@ -1,3 +1,4 @@
+/* eslint-env jest */
 import { productCategory, productComposition, productSummary, sortProducts } from './products';
 
 const block = (text) => ({ _type: 'block', _key: text, style: 'normal', markDefs: [], children: [{ _type: 'span', _key: text, text, marks: [] }] });
