@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
+import { ExploreLinks } from '@/components/ExploreLinks';
+
 const links = [
   { href: '/products', label: 'Products' },
   { href: '/#therapeutic-areas', label: 'Therapeutic areas' },
@@ -34,6 +36,12 @@ export function Navbar() {
       <a href='#main-content' className='skip-link'>
         Skip to content
       </a>
+      <div className='header-explore'>
+        <div className='shell header-explore-inner'>
+          <span>MORE FROM THINKROMAN</span>
+          <ExploreLinks compact />
+        </div>
+      </div>
       <div className='shell header-inner'>
         <Link
           href='/'
@@ -102,6 +110,10 @@ export function Navbar() {
           >
             Partner with us <ArrowUpRight size={16} />
           </Link>
+          <div className='mobile-explore'>
+            <p className='eyebrow'>MORE FROM THINKROMAN</p>
+            <ExploreLinks onNavigate={() => setOpen(false)} />
+          </div>
         </nav>
       )}
     </header>

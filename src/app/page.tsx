@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { Product, sortProducts } from '@/lib/products';
 
 import { DrugCategories } from '@/components/DrugCategories';
+import { ExploreLinks } from '@/components/ExploreLinks';
 import { FeaturedProducts } from '@/components/FeaturedProducts';
 import { ProductCard } from '@/components/ProductCard';
 import { Sunshine } from '@/components/Sunshine';
@@ -118,6 +119,10 @@ export default async function HomePage() {
             <p>Browse every therapeutic area and formulation.</p>
             <span className='catalog-cta-link'>View all products <ArrowUpRight size={18} /></span>
           </Link>
+        </div>
+        <div className='homepage-explore'>
+          <p className='eyebrow'>MORE FROM THINKROMAN</p>
+          <ExploreLinks />
         </div>
       </section>
       <section className='section company-section'>
