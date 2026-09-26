@@ -487,6 +487,12 @@ h2 em {
   border-radius: 50%;
   box-shadow: 0 0 0 28px #ffffff0d, 0 0 0 56px #ffffff09;
 }
+.catalog-cta-icons { position: absolute; inset: 0; pointer-events: none; color: #8f1d2c; opacity: .1; }
+.catalog-cta-icons svg { position: absolute; width: 76px; height: 76px; stroke-width: 1; }
+.catalog-cta-icons svg:nth-child(1) { top: 48px; left: 35px; transform: rotate(-25deg); }
+.catalog-cta-icons svg:nth-child(2) { top: 105px; right: 72px; width: 108px; height: 108px; transform: rotate(8deg); }
+.catalog-cta-icons svg:nth-child(3) { right: 28px; bottom: 118px; width: 92px; height: 92px; transform: rotate(-10deg); }
+.catalog-cta-icons svg:nth-child(4) { left: 24px; bottom: 116px; width: 64px; height: 64px; }
 .catalog-cta-card:hover { background: #f3e0e7; border-color: #8f1d2c55; }
 .catalog-cta-card .eyebrow { position: relative; margin-bottom: 12px; color: #8f1d2c; }
 .catalog-cta-card h3 { position: relative; max-width: 220px; margin-bottom: 12px; font-size: 27px; font-weight: 450; }

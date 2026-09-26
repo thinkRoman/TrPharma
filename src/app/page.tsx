@@ -1,10 +1,13 @@
 import {
+  Activity,
   ArrowRight,
   ArrowUpRight,
   Check,
   FlaskConical,
   HeartHandshake,
   PackageCheck,
+  Pill,
+  Wind,
 } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -103,6 +106,12 @@ export default async function HomePage() {
             <ProductCard key={product.id} product={product} />
           ))}
           <Link href='/products' className='catalog-cta-card'>
+            <span className='catalog-cta-icons' aria-hidden='true'>
+              <Pill />
+              <Wind />
+              <Activity />
+              <HeartHandshake />
+            </span>
             <span className='catalog-cta-mark' aria-hidden='true'>↗</span>
             <span className='eyebrow'>THE FULL RANGE</span>
             <h3>Explore all products</h3>
