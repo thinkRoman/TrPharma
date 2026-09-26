@@ -292,6 +292,8 @@ h2 em {
 }
 .mobile-nav {
   padding-block: 12px 24px;
+  max-height: calc(100dvh - 76px);
+  overflow-y: auto;
 }
 .mobile-nav > a {
   display: flex;
