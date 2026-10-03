@@ -47,7 +47,7 @@ export default function ContactPage() {
             Browse formulation details or contact us with a product information
             enquiry.
           </p>
-          <Link className='text-link' href='/products'>
+          <Link className='text-link' href='/'>
             Browse product information <ArrowUpRight size={16} />
           </Link>
         </section>

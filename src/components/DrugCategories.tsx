@@ -138,7 +138,7 @@ export function DrugCategories() {
             <p className='eyebrow'>A RANGE OF CARE</p>
             <h2>Explore by therapeutic area</h2>
           </div>
-          <Link href='/products' className='text-link'>
+          <Link href='/' className='text-link'>
             All products <ArrowUpRight className='h-4 w-4' />
           </Link>
         </div>

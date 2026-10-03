@@ -143,7 +143,7 @@ export function FeaturedProducts({
           </h2>
         </div>
         <Link
-          href={product ? `/products/${product.slug}` : '/products'}
+          href={product ? `/products/${product.slug}` : '/'}
           aria-label={
             product ? `Explore ${product.heading}` : 'Explore products'
           }

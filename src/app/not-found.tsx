@@ -15,7 +15,7 @@ export default function NotFound() {
         homepage.
       </p>
       <div className='hero-actions'>
-        <Link className='button' href='/products'>
+        <Link className='button' href='/'>
           Explore products
         </Link>
         <Link className='text-link' href='/'>

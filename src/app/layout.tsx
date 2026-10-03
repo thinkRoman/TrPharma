@@ -61,13 +61,13 @@ export const metadata: Metadata = {
     title: 'TrPharma | Trusted Pharmaceutical Partner',
     description:
       'Quality nutraceuticals and pharmaceutical products for bone health, vitamin D, and wellness.',
-    images: [`/images/og.png`],
+    images: [`/images/og.jpeg`],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [`/images/og.png`],
+    images: [`/images/og.jpeg`],
   },
 };
 

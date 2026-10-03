@@ -70,7 +70,7 @@ export function HeroSection() {
             {/* CTA Buttons - MUCH STRONGER */}
             <div className='flex flex-col sm:flex-row gap-5 pt-4'>
               <Link
-                href='/products'
+                href='/'
                 className='group inline-flex items-center justify-center gap-4 bg-primary text-primary-foreground px-10 py-5 text-sm font-semibold tracking-[0.15em] uppercase hover:bg-accent hover:text-accent-foreground transition-all duration-300'
               >
                 Explore Products
@@ -122,7 +122,7 @@ export function HeroSection() {
                 ].map((product) => (
                   <Link
                     key={product.name}
-                    href='/products'
+                    href='/'
                     className='block group p-6 bg-background hover:bg-primary transition-all duration-300'
                   >
                     <div className='flex items-start justify-between'>
@@ -145,7 +145,7 @@ export function HeroSection() {
 
               {/* CTA */}
               <Link
-                href='/products'
+                href='/'
                 className='mt-10 w-full inline-flex items-center justify-center gap-4 bg-primary text-primary-foreground px-8 py-5 text-sm font-semibold tracking-[0.15em] uppercase hover:bg-accent hover:text-accent-foreground transition-all duration-300'
               >
                 View All Products

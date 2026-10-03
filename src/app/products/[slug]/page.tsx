@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${product.heading} | ThinkRoman Pharma`,
     description: product.desc || product.tagline,
     path: `/products/${product.slug}`,
-    image: product.img || '/images/og.png',
+    image: product.img || '/images/og.jpeg',
   });
 }
 export default async function ProductPage({ params }: PageProps) {
@@ -48,7 +48,7 @@ export default async function ProductPage({ params }: PageProps) {
         }}
       />
       <nav aria-label='Breadcrumb' className='breadcrumb'>
-        <Link href='/products'>Products</Link>
+        <Link href='/'>Products</Link>
         <span aria-hidden='true'>/</span>
         <Link href={`/products?category=${encodeURIComponent(category)}`}>
           {category}
@@ -115,7 +115,7 @@ export default async function ProductPage({ params }: PageProps) {
             For reference and educational purposes. Consult your healthcare
             professional for advice about medicines.
           </p>
-          <Link className='text-link' href='/products'>
+          <Link className='text-link' href='/'>
             Back to all products ↗
           </Link>
         </aside>

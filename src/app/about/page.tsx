@@ -23,7 +23,7 @@ export default function AboutPage() {
           <Link className='text-link' href='#ceo'>
             Meet our founder ↗
           </Link>
-          <Link className='text-link' href='/products'>
+          <Link className='text-link' href='/'>
             Explore our products ↗
           </Link>
         </div>

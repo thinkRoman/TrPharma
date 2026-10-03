@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ExploreLinks } from '@/components/ExploreLinks';
 
 const links = [
-  { href: '/products', label: 'Products' },
+  { href: '/', label: 'Products' },
   { href: '/#therapeutic-areas', label: 'Therapeutic areas' },
   { href: '/about', label: 'About' },
   { href: '/contact-us', label: 'Contact' },

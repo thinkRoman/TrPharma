@@ -21,7 +21,7 @@ export function Footer() {
         </div>
         <div className='footer-column'>
           <h2>Explore</h2>
-          <Link href='/products'>Product catalog</Link>
+          <Link href='/'>Product catalog</Link>
           <Link href='/#therapeutic-areas'>Therapeutic areas</Link>
           <Link href='/about'>About TrPharma</Link>
           <Link href='/about#sunshine'>Sunshine Campaign</Link>
